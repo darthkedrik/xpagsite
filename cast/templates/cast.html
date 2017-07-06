@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About and Cast Home for Experience and Gold">
+    <meta name="author" content="Keith Diedrick">
+
+    <title>Experience and Gold</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/xpagbannernobg.png' %}" alt="Experience and Gold" style="max-height:50px;margin-top:-14px;"</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'episodes' %}">Episodes</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" role="main">
+
+
+      <div class="jumbotron">
+        <h1>Cast Members</h1>
+        {% for member in castmembers %}
+        <div class="row">
+          <div class="col-sm-3">
+            <a href="{% url 'about' %}{{ member.slug }}"><img src="{{ member.Photo.url }}" width="200" height="200" alt="{{ member.FullName }}"></a>
+            <h4>{{ member.FullName }}</h4>
+            <span>  as {{ member.CharacterName }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="jumbotron">
+        <p>This is where our Podcast's description will go</p>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Current Campaign Setting</h1>
+        <p>This is where Nick will put his campaign description, as well as any of the maps or documents.</p>
+      </div>
+
+
+
+    </div>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Episodes of Experience and Gold, a fifth edition dungeons and dragons podcast">
+    <meta name="author" content="Keith Diedrick">
+
+    <title>Experience and Gold</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/3-col-portfolio.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/xpagbannernobg.png' %}" alt="Experience and Gold" style="max-height:50px;margin-top:-14px;"</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'episodes' %}">Episodes</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+        <div class="container">
+          <h1 style="text-shadow:none">Episode {{ recent.Number }}: {{ recent.Title }}</h1>
+          <p style="text-shadow:none">{{ recent.Synopsis }}</p>
+          {% autoescape off %} {{ recent.SoundCloud }} {% endautoescape %}
+        </div>
+      </div>
+
+      <div class="container">
+
+          <!-- Page Heading -->
+          <div class="row">
+              <div class="col-lg-12">
+                  <h1 class="page-header" style="color:#eee">Previous Episodes
+                  </h1>
+              </div>
+          </div>
+          <!-- /.row -->
+
+          <!-- Project One -->
+          {% for episode in episodes %}
+            <div class="row">
+                <div class="col-md-7">
+                    {% autoescape off %} {{ episode.SoundCloud }} {% endautoescape %}
+                </div>
+                <div class="col-md-5">
+                    <h3 style="color:#eee">Episode {{ episode.Number }}: {{ episode.Title }}</h3>
+                    <p style="color:#eee">{{ episode.Synopsis }}</p>
+                </div>
+            </div>
+          <!-- /.row -->
+
+            <hr>
+          {% endfor %}
+
+
+          <!-- Pagination -->
+          <div class="row text-center">
+              <div class="col-lg-12">
+                {% if episodes.has_other_pages %}
+                  <ul class="pagination">
+                    {% if episodes.has_previous %}
+                      <li>
+                          <a href="?page={{ episodes.previous_page_number }}">&laquo;</a>
+                      </li>
+                    {% else %}
+                      <li class="disabled"><span>&laquo;</span></li>
+                    {% endif %}
+                    {% for p in page_range %}
+                      {% if episodes.number == p %}
+                        <li class="active"><span>{{ p }}<span class="sr-only">(current)</span></span></li>
+                      {% else %}
+                        <li><a href="?page={{ p }}">{{ p }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                    {% if episodes.has_next %}
+                      <li>
+                          <a href="?page={{ episodes.next_page_number }}">&raquo;</a>
+                      </li>
+                    {% else %}
+                      <li class="disabled"><span>&raquo;</span></li>
+                    {% endif %}
+                  </ul>
+                {% endif %}
+              </div>
+          </div>
+        <!-- /.row -->
+
+
+          <hr>
+
+          <!-- Footer -->
+          <footer>
+              <div class="row">
+                  <div class="col-lg-12">
+                      <p>Copyright Hard To Explain Entertainment &copy; 2017</p>
+                  </div>
+              </div>
+              <!-- /.row -->
+          </footer>
+
+      </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

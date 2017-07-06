@@ -1,0 +1,8 @@
+{
+  "name": "Experience and Gold",
+  "description": "The webpage for Dungeons and Dragons Podcast Experience and Gold.",
+  "image": "",
+  "repository": "https://github.com/darthkedrik/xpagsite",
+  "keywords": ["python", "django", "dungeons", "dragons", "experience", "gold", "podcast" ],
+  "addons": [ "heroku-postgresql" ]
+}
