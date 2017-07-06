@@ -254,6 +254,7 @@ th {
   }
   .navbar {
     display: none;
+    padding-right: 5px;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
