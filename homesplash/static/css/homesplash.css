@@ -144,8 +144,11 @@ body {
     top: 0;
   }
   .mastfoot {
-    position: fixed;
+    position: absolute;
+    left: 0;
     bottom: 0;
+    height: 60px;
+    width: 100%;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
