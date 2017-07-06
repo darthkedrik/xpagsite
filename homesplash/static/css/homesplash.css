@@ -144,7 +144,7 @@ body {
     top: 0;
   }
   .mastfoot {
-    position: absolute;
+    position: relative;
     left: 0;
     bottom: 0;
     height: 60px;
