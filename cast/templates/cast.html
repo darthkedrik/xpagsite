@@ -20,7 +20,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/xpagbannernobg.png' %}" alt="Experience and Gold" style="max-height:50px;margin-top:-14px;"</a>
+                <a href="{% url 'home' %}"><img src="{% static 'img/xpagbannernobg.png' %}" alt="Experience and Gold" style="max-height:50px;margin-top:-14px;"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
                 <ul class="nav navbar-nav">
@@ -42,15 +42,15 @@
 
       <div class="jumbotron">
         <h1>Cast Members</h1>
-        {% for member in castmembers %}
         <div class="row">
+        {% for member in castmembers %}
           <div class="col-sm-3">
             <a href="{% url 'about' %}{{ member.slug }}"><img src="{{ member.Photo.url }}" width="200" height="200" alt="{{ member.FullName }}"></a>
             <h4>{{ member.FullName }}</h4>
             <span>  as {{ member.CharacterName }}</span>
           </div>
-        </div>
         {% endfor %}
+        </div>
       </div>
 
       <div class="jumbotron">
@@ -58,7 +58,7 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Current Campaign Setting</h1>
+        <h1>Our Story So Far...</h1>
         <p>This is where Nick will put his campaign description, as well as any of the maps or documents.</p>
       </div>
 

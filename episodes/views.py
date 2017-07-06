@@ -13,7 +13,7 @@ class EpisodeListing(generic.TemplateView):
     def get(self, request, **kwargs):
 
         episode_list = Episode.objects.order_by('-Date')
-        paginator = Paginator(episode_list[1:], 2) #Ignore most recent
+        paginator = Paginator(episode_list[1:], 20) #Ignore most recent
 
         page = request.GET.get('page')
 

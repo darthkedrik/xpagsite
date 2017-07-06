@@ -21,9 +21,7 @@ body {
   margin: 0;
   color: #111;
   text-align: center;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-  -moz-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+
 }
 
 article,
@@ -4964,7 +4962,7 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding-top: 300px;
+  padding-top: 120px;
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
