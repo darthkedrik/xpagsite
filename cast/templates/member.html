@@ -3,14 +3,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1000; user-scalable=0;">
-    <meta name="description" content="Host {{ object.FullName }}'s page from Experience and Gold, a Dungeons and Dragons podcast">
+    <meta name="description" content="Host {{ object.FullName }} is right here to help you understand their character in the podcast, and their own life outside of the game!">
     <meta name="author" content="Keith Diedrick">
 
-    <title>Experience and Gold: {{ object.FullName }}</title>
+    <title>Experience and Gold - Host {{ object.FullName }}</title>
 
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/cast.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
   </head>
@@ -64,8 +63,6 @@
       </div>
     </div>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script>window.jQuery || document.write('<script src="{% static 'js/jquery.min.js' %}"><\/script>')</script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>

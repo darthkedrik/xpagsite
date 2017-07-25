@@ -31,23 +31,16 @@ class CastMember(models.Model):
     CharacterName = models.TextField(max_length=100)
 
     CharacterBio = models.TextField()
+    
+    slug = models.CharField(max_length=128, unique=True)
 
     def FullName(self):
         return (self.FirstName + ' ' + self.LastName)
-
-    '''Twitter =
-
-    Facebook =
-
-    OtherSite = '''
-
-    slug = models.CharField(max_length=128, unique=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
             self.s = slugify(self.slug)
         super(CastMember, self).save(*args, **kwargs)
-
 
     def __str__(self):
         return self.FullName()
