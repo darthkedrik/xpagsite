@@ -3,15 +3,9 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
+html,
 body {
-    background-color: #4e607f;
-    background: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-attachment: scroll;
+    background: #4e607f;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
